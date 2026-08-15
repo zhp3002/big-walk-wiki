@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'Big Walk Wiki — Guides, Puzzles, Maps & Multiplayer',
   description: 'Explore Big Walk guides for beginners, puzzles, maps, items, multiplayer, crossplay, achievements, and key mechanics across PC, Mac, PS5, and Switch 2.',
   keywords: 'Big Walk, Big Walk wiki, Big Walk guide, puzzles, map, multiplayer, crossplay, achievements',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
