@@ -1,0 +1,277 @@
+/* ============ Big Walk Wiki — 全局样式(布局复刻目标站,配色按调研结果) ============ */
+/* 主题:默认亮色 · 自然草绿(调研 HSL 106 35% 42%),暗色随系统 */
+/* 调研依据:Big Walk 官方视觉是自然/户外/草地/天空,不是暗色 wiki */
+
+:root {
+  /* 调研指定的主题色(HSL 通道,亮色主题) */
+  --nav-theme: 106 35% 42%;       /* natural green */
+  --nav-theme-light: 106 35% 55%; /* light green */
+
+  --bg: #f6f8f0;
+  --bg-soft: #edf1e2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3f7e9;
+  --line: #d6dcc4;
+  --line-soft: #e5ead6;
+  --text: #2c3424;
+  --text-dim: #55614a;
+  --text-mute: #87927a;
+  --cream: #24301a;
+  --accent: hsl(106 35% 42%);   /* natural green */
+  --accent-2: hsl(106 35% 55%); /* light green */
+}
+
+/* 暗色主题(调研 HSL 106 32% 48%) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-theme: 106 32% 48%;       /* natural green */
+    --nav-theme-light: 106 32% 60%; /* light green */
+
+    --bg: #141810;
+    --bg-soft: #191e13;
+    --bg-card: #1d2316;
+    --bg-card-hover: #232a1a;
+    --line: #333c26;
+    --line-soft: #262d1c;
+    --text: #e5ead8;
+    --text-dim: #a8b298;
+    --text-mute: #74806a;
+    --cream: #eef3e2;
+    --accent: hsl(106 32% 48%);
+    --accent-2: hsl(106 32% 60%);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4 {
+  color: var(--cream);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1.02; text-transform: uppercase; }
+h2.section-h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); text-transform: uppercase; margin-top: 0.4em; }
+h3.section-h3 { font-size: 1.15rem; text-transform: uppercase; color: var(--accent-2); }
+
+p.prose-p { color: var(--text-dim); margin: 0 0 1em; }
+ul.prose-ul { color: var(--text-dim); padding-left: 1.2em; }
+li.prose-li { margin-bottom: 0.5em; }
+strong.prose-strong { color: var(--cream); }
+
+/* ============ 布局容器 ============ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container-narrow {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============ 通用 utility ============ */
+.kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.6em;
+}
+.kicker-dim { color: var(--text-mute); }
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+.section {
+  padding: 56px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.lead {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 64ch;
+}
+
+/* ============ 按钮 ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.3em;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); background: var(--bg-card); }
+.btn-primary { border-color: var(--accent); color: var(--accent); }
+.btn-primary:hover { background: var(--accent); color: var(--bg); }
+
+/* ============ 卡片(列表/详情通用) ============ */
+.card {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  padding: 20px;
+  transition: all 0.15s ease;
+  position: relative;
+}
+.card:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-2px); }
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.card-code {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--text-mute);
+  text-transform: uppercase;
+}
+.card-title {
+  font-size: 1.15rem;
+  color: var(--cream);
+  text-transform: uppercase;
+  margin: 6px 0;
+  font-weight: 600;
+}
+.card-summary {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin: 8px 0 12px;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.card-tag { border: 1px solid var(--line); padding: 3px 8px; }
+
+/* ============ 网格 ============ */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ============ 统计大数字(首页) ============ */
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin: 32px 0;
+}
+.stat-num {
+  font-size: 2.6rem;
+  color: var(--cream);
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* ============ 详情页双栏 ============ */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+}
+@media (max-width: 900px) {
+  .detail-layout { grid-template-columns: 1fr; }
+  .detail-aside { order: -1; }
+}
+
+/* ============ 顶栏状态条 ============ */
+.statusbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.statusbar .container {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  flex-wrap: wrap;
+}
+.statusbar .sep { color: var(--line); }
+.statusbar .live::before {
+  content: '●';
+  color: var(--accent-2);
+  margin-right: 6px;
+}
+
+/* ============ lang switch ============ */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+.lang-switch a {
+  padding: 4px 10px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.lang-switch a.active { color: var(--accent); background: var(--bg-card); }
+
+/* ============ prev/next nav ============ */
+.prevnext {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 48px;
+}
+.prevnext .card { text-align: left; }
+.prevnext .dir { font-size: 0.66rem; letter-spacing: 0.2em; color: var(--text-mute); text-transform: uppercase; }
+.next-wrap { text-align: right; }

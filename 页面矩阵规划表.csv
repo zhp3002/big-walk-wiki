@@ -1,0 +1,36 @@
+页面类型,页面名称,对应分类,承载关键词,用户问题,URL Slug 建议
+首页,Big Walk 游戏主页,品牌核心,big walk / big walk game / the big walk,Big Walk 是什么游戏？怎么玩？,/
+导航页,发售信息总览,Release,big walk release date / big walk release time / big walk ps5 release date / big walk the big walk release date,Big Walk 什么时候发售？几点解锁？,/release/
+信息页,发售日期与时间,Release,big walk release date / big walk release time,Big Walk 准确发售日是哪天？各时区几点？,/release/date/
+信息页,PS5 版本发售信息,Release,big walk ps5 release date,Big Walk PS5 版什么时候出？,/release/ps5/
+导航页,平台与购买,Platforms,big walk ps5 / big walk switch / big walk switch 2 / big walk nintendo switch / big walk xbox / big walk pc / big walk playstation / big walk psn / big walk ps plus / big walk steam,Big Walk 在哪些平台？哪里能买？,/platforms/
+商业页,PS5 版本,Platforms,big walk ps5 / big walk playstation / big walk psn,Big Walk PS5 版多少钱？在哪买？,/platforms/ps5/
+商业页,Switch 版本,Platforms,big walk switch / big walk nintendo switch / big walk switch 2,Big Walk 上 Switch 吗？支持 Switch 2 吗？,/platforms/switch/
+商业页,Xbox 版本,Platforms,big walk xbox,Big Walk 会出 Xbox 版吗？,/platforms/xbox/
+商业页,PC / Steam 版本,Platforms,big walk pc / big walk steam / big walk steam price / big walk steam key / big walk key,Big Walk Steam 价格？怎么买 key？,/platforms/steam/
+信息页,PS Plus 会员,Platforms,big walk ps plus,Big Walk 会进 PS Plus 会免吗？,/platforms/ps-plus/
+导航页,联机与跨平台,Crossplay,big walk crossplay / big walk the big walk crossplay / big walk cross platform,Big Walk 支持跨平台联机吗？,/crossplay/
+信息页,跨平台联机说明,Crossplay,big walk crossplay / big walk cross platform / big walk the big walk crossplay,PS5 和 PC 能一起玩吗？跨平台怎么开？,/crossplay/how-to/
+导航页,多人玩法,Multiplayer,big walk max players / big walk how many players / big walk how many people can play / big walk split screen / big walk local coop / big walk solo / big walk player count / big walk replayable,Big Walk 几个人玩？能单人吗？,/multiplayer/
+信息页,玩家人数上限,Multiplayer,big walk max players / big walk how many players / big walk how many people can play / big walk player count,Big Walk 最多几个人联机？现在多少人在玩？,/multiplayer/max-players/
+信息页,本地联机与分屏,Multiplayer,big walk split screen / big walk local coop,Big Walk 支持分屏/本地合作吗？,/multiplayer/local-coop/
+信息页,单人游玩,Multiplayer,big walk solo / big walk replayable,Big Walk 一个人能玩吗？耐玩吗？,/multiplayer/solo/
+导航页,价格,Price,big walk price / big walk cost / big walk game price / big walk how much will big walk cost,Big Walk 多少钱？各平台价格？,/price/
+商业页,各平台价格对比,Price,big walk price / big walk cost / big walk game price / big walk how much will big walk cost,Big Walk 标准版多少钱？有折扣吗？,/price/comparison/
+导航页,评测,Review,big walk review / big walk reviews / big walk metacritic / big walk impressions,Big Walk 好玩吗？媒体评分多少？,/review/
+信息页,媒体评分汇总,Review,big walk metacritic / big walk reviews,Big Walk Metacritic 多少分？口碑如何？,/review/metacritic/
+信息页,玩家评测与首发印象,Review,big walk review / big walk impressions,Big Walk 首发体验怎么样？值得买吗？,/review/impressions/
+导航页,攻略中心,Guide,big walk trophy guide / big walk all puzzles / big walk how long to beat / big walk length / big walk map,Big Walk 怎么通关？攻略在哪看？,/guide/
+攻略页,白金 / 奖杯攻略,Guide,big walk trophy guide,Big Walk 怎么白金？奖杯列表？,/guide/trophy/
+攻略页,全谜题解法,Guide,big walk all puzzles,Big Walk 所有谜题怎么解？,/guide/puzzles/
+攻略页,通关时长,Guide,big walk how long to beat / big walk length,Big Walk 多久能通关？流程多长？,/guide/how-long-to-beat/
+攻略页,全地图,Guide,big walk map,Big Walk 地图全貌？区域分布？,/guide/map/
+导航页,Mod 与修复,Mods,big walk mods / big walk online fix / big walk freetp,Big Walk 有 Mod 吗？联机报错怎么修？,/mods/
+信息页,Mod 安装,Mods,big walk mods,Big Walk 怎么装 Mod？有哪些推荐 Mod？,/mods/install/
+信息页,联机修复工具,Mods,big walk online fix / big walk freetp,Big Walk 联机进不去/无法联机怎么办？,/mods/online-fix/
+导航页,社区与资源,Community,big walk reddit / big walk discord / big walk trailer / big walk steam charts / big walk steamdb / big walk wiki / big walk game wiki / big walk logo / big walk house house,哪里有 Big Walk 社区？资源在哪找？,/community/
+信息页,官方社区入口,Community,big walk reddit / big walk discord,Big Walk 的 Reddit/Discord 在哪？,/community/official/
+信息页,预告片与宣传,Community,big walk trailer,Big Walk 预告片在哪看？,/community/trailer/
+信息页,数据追踪,Community,big walk steam charts / big walk steamdb,Big Walk Steam 在线人数？数据趋势？,/community/stats/
+信息页,百科与资料,Community,big walk wiki / big walk game wiki,Big Walk 中文 wiki/百科在哪？,/community/wiki/
+信息页,开发商与品牌,Community,big walk logo / big walk house house,Big Walk 是谁开发的？logo 素材？,/community/developer/
