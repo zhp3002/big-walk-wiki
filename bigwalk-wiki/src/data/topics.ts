@@ -150,7 +150,12 @@ export const topics: Topic[] = [
     keywords: 'big walk 4166 1899 / big walk number puzzle / big walk coordinates puzzle',
     tags: ['PUZZLE', 'COORDINATES', 'MAP / GPS'], hasMdx: true,
     summary: '4166 and 1899 are not a code — they are coordinates pointing to a hidden button. Solve it with the map or the GPS.',
-    pairsWith: ['all-puzzles', 'map', 'how-long-to-beat'] },
+    pairsWith: ['all-puzzles', 'map', 'red-tower-puzzle'] },
+  { slug: 'red-tower-puzzle', code: 'GID-06', name: 'Red Tower Puzzle', category: 'guide',
+    keywords: 'big walk red tower / big walk red tower puzzle / big walk map room / big walk how to get map',
+    tags: ['TOWER', 'PUZZLE', 'MAP ROOM'], hasMdx: true,
+    summary: 'Five nearby puzzles feed the Red Tower. Its key opens the Map Room — a foldable map, a compass and a full island diorama.',
+    pairsWith: ['4166-1899-puzzle', 'map', 'all-puzzles'] },
 
   // ---- Mods ----
   { slug: 'mods', code: 'MOD-01', name: 'Mods', category: 'mods',

@@ -121,6 +121,11 @@ export const topicMeta: Record<string, TopicMeta> = {
     description: '4166 and 1899 in Big Walk are not a code. They are coordinates that point to a hidden button. Here is how to solve the number puzzle with the map or the GPS.',
     keywords: 'big walk 4166 1899, big walk number puzzle, big walk coordinates puzzle, big walk map coordinates, big walk gps puzzle',
   },
+  'red-tower-puzzle': {
+    title: 'Big Walk Red Tower Puzzle Guide — Unlock the Map Room',
+    description: 'Big Walk Red Tower puzzle guide: solve the five nearby puzzles, file the key, and open the Map Room to get the foldable map and the compass.',
+    keywords: 'big walk red tower puzzle, big walk red tower, big walk red tower solution, big walk map room, big walk map room puzzle, big walk how to unlock map, big walk how to get map, big walk red tower collectibles',
+  },
   mods: {
     title: 'Big Walk Mods: Mod Support Status & Custom Content',
     description: 'Big Walk mod support is unconfirmed. As an online co-op adventure with crossplay, it is not a traditional mod-friendly game. What we know about Big Walk mods.',

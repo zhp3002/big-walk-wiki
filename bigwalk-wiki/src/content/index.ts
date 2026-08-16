@@ -25,6 +25,7 @@ import allPuzzlesEn from './all-puzzles.en.mdx';
 import mapEn from './map.en.mdx';
 import trophyGuideEn from './trophy-guide.en.mdx';
 import puzzle4166En from './4166-1899-puzzle.en.mdx';
+import redTowerPuzzleEn from './red-tower-puzzle.en.mdx';
 // Mods
 import modsEn from './mods.en.mdx';
 import onlineFixEn from './online-fix.en.mdx';
@@ -64,6 +65,7 @@ export const mdxIndex: Record<string, { default: any }> = {
   'map.en': { default: mapEn },
   'trophy-guide.en': { default: trophyGuideEn },
   '4166-1899-puzzle.en': { default: puzzle4166En },
+  'red-tower-puzzle.en': { default: redTowerPuzzleEn },
   // Mods
   'mods.en': { default: modsEn },
   'online-fix.en': { default: onlineFixEn },
