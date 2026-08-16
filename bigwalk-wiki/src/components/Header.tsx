@@ -32,19 +32,19 @@ export default function Header() {
       </div>
 
       {/* 主导航 */}
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 24px', borderBottom: '1px solid var(--line)' }}>
-        <Link href={`/${locale}`} style={{ fontWeight: 700, letterSpacing: '0.12em', color: 'var(--cream)' }}>
-          {t('brand')}
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px', borderBottom: '1px dashed var(--line)' }}>
+        <Link href={`/${locale}`} className="brand-mark" style={{ fontSize: '1.18rem', color: 'var(--cream)', display: 'inline-flex', alignItems: 'center' }}>
+          BIG WALK<span className="brand-chip">WIKI</span>
         </Link>
-        <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
-          <Link href={`/${locale}/topics`} className="nav-link" style={{ fontSize: '0.78rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{t('topics')}</Link>
-          <Link href={`/${locale}/guide`} className="nav-link" style={{ fontSize: '0.78rem', letterSpacing: '0.18em', textTransform: 'uppercase' }}>{t('guide')}</Link>
-          <button className="btn" style={{ padding: '0.4em 0.9em' }} onClick={() => setOpen(!open)}>{t('menu')}</button>
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <Link href={`/${locale}/topics`} className="nav-pill">{t('topics')}</Link>
+          <Link href={`/${locale}/guide`} className="nav-pill">{t('guide')}</Link>
+          <button className="btn btn-yellow" style={{ padding: '0.5em 1.1em', fontSize: '0.72rem' }} onClick={() => setOpen(!open)}>{t('menu')}</button>
         </div>
       </div>
 
       {open && (
-        <div className="container" style={{ padding: '16px 24px', borderBottom: '1px solid var(--line)', display: 'flex', flexWrap: 'wrap', gap: 20 }}>
+        <div className="container" style={{ padding: '16px 24px', borderBottom: '1px dashed var(--line)', display: 'flex', flexWrap: 'wrap', gap: 10 }}>
           <Link href={`/${locale}`}>{t('home')}</Link>
           <Link href={`/${locale}/topics`}>{t('topics')}</Link>
           <Link href={`/${locale}/guide`}>{t('guide')}</Link>

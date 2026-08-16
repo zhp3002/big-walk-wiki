@@ -16,10 +16,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer style={{ borderTop: '1px solid var(--line)', marginTop: '64px', background: 'var(--bg-soft)' }}>
+    <footer style={{ borderTop: '1px dashed var(--line)', marginTop: '72px', background: 'var(--bg-soft)' }}>
       <div className="container" style={{ padding: '48px 24px' }}>
         <div style={{ marginBottom: 28 }}>
-          <div style={{ fontWeight: 700, color: 'var(--cream)', letterSpacing: '0.14em' }}>{t('aboutTitle')}</div>
+          <div className="brand-mark" style={{ fontSize: '1.15rem', color: 'var(--cream)' }}>
+            BIG WALK<span className="brand-chip">WIKI</span>
+          </div>
           <p style={{ color: 'var(--text-dim)', maxWidth: '56ch', fontSize: '0.9rem', marginTop: 10 }}>
             {t('about')}
           </p>
@@ -28,10 +30,10 @@ export default function Footer() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32, paddingTop: 24, borderTop: '1px solid var(--line)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32, paddingTop: 24, borderTop: '1px dashed var(--line)' }}>
           {/* 站内导航 */}
           <div>
-            <h4 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--accent)' }}>{t('guidesTitle')}</h4>
+            <h4 style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'var(--red)', fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}>{t('guidesTitle')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 10 }}>
               <Link href={href('/topics')}>All Topics</Link>
               <Link href={href('/guide')}>Beginner Guide</Link>
@@ -44,7 +46,7 @@ export default function Footer() {
 
           {/* 官方链接(调研列出的入口;URL 未提供,标 TBC) */}
           <div>
-            <h4 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--accent)' }}>{t('officialTitle')}</h4>
+            <h4 style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'var(--blue)', fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}>{t('officialTitle')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 10 }}>
               {officialLinks.map((l) => (
                 <span key={l.label} style={{ color: 'var(--text-dim)' }}>
@@ -56,7 +58,7 @@ export default function Footer() {
 
           {/* 社区(调研:无官方 Discord;Reddit 是玩家自建;IGN wiki 是素材中唯一真实 URL) */}
           <div>
-            <h4 style={{ fontSize: '0.7rem', letterSpacing: '0.2em', color: 'var(--accent)' }}>{t('communityTitle')}</h4>
+            <h4 style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'var(--green)', fontFamily: 'var(--font-display)', textTransform: 'uppercase' }}>{t('communityTitle')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 10 }}>
               <span style={{ color: 'var(--text-dim)' }}>{t('officialDiscord')}</span>
               <span style={{ color: 'var(--text-dim)' }}>{t('communityReddit')} <span style={{ color: 'var(--text-mute)', fontSize: '0.66rem', letterSpacing: '0.1em' }}>[{t('urlTbc')}]</span></span>

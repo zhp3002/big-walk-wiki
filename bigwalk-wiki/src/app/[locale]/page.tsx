@@ -1,16 +1,77 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import type { CSSProperties } from 'react';
+
+/* 真实 Big Walk 游戏截图(用户提供于 /images,已复制到 public/images) */
+const IMG = {
+  playground: '/images/shot-playground.jpg',   // 草坪上的三名玩家与彩色游乐场
+  chairlift: '/images/shot-b.jpg',             // 缆车俯瞰山谷
+  group: '/images/shot-group-bridge.jpg',      // 六人小队在高桥上
+  maproom: '/images/shot-d.jpg',               // 地图室内的全岛立体模型
+};
+
+/* 信息条小图标(纯描边 SVG,继承分类色) */
+const stroke = { fill: 'none', strokeWidth: 2, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
+const IconCal = ({ c }: { c: string }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" stroke={c} {...stroke}><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M8 3v4M16 3v4M3 10h18" /></svg>
+);
+const IconUsers = ({ c }: { c: string }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" stroke={c} {...stroke}><circle cx="9" cy="8" r="3.2" /><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" /><path d="M15.5 5.6a3.2 3.2 0 0 1 0 5.8M17.5 14.4c1.7.7 2.7 2.3 3 4.6" /></svg>
+);
+const IconGlobe = ({ c }: { c: string }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" stroke={c} {...stroke}><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.8 2.6 2.8 15.4 0 18M12 3c-2.8 2.6-2.8 15.4 0 18" /></svg>
+);
+const IconTrophy = ({ c }: { c: string }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" stroke={c} {...stroke}><path d="M7 4h10v5a5 5 0 0 1-10 0V4z" /><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3" /><path d="M12 14v3M8.5 21h7M10 21c0-1.7.7-2.6 2-4 1.3 1.4 2 2.3 2 4" /></svg>
+);
 
 export default function HomePage() {
   const t = useTranslations('Home');
   const locale = useLocale();
   const href = (p: string) => `/${locale}${p}`;
 
-  const startCards = [
-    { n: '1', title: t('startCard1Title'), desc: t('startCard1Desc'), to: '/guide' },
-    { n: '2', title: t('startCard2Title'), desc: t('startCard2Desc'), to: '/topics/all-puzzles' },
-    { n: '3', title: t('startCard3Title'), desc: t('startCard3Desc'), to: '/topics/map' },
-    { n: '4', title: t('startCard4Title'), desc: t('startCard4Desc'), to: '/topics/crossplay' },
+  /* 信息条:调研核实的真实数据 */
+  const infoStrip = [
+    { icon: <IconCal c="var(--red)" />, label: t('statReleased'), value: t('statReleasedValue') },
+    { icon: <IconUsers c="var(--blue)" />, label: t('statPlayers'), value: t('statPlayersValue') },
+    { icon: <IconGlobe c="var(--green)" />, label: t('statCrossplay'), value: t('statCrossplayValue') },
+    { icon: <IconTrophy c="var(--orange)" />, label: t('statAchievements'), value: t('statAchievementsValue') },
+  ];
+
+  /* Start Your Journey:5 张分类卡(分类色 red/yellow/green/blue/orange) */
+  const journeyCards = [
+    { tag: 'journeyC1Tag', title: 'journeyC1Title', desc: 'journeyC1Desc', to: '/guide',
+      img: IMG.group, pos: 'center', badge: 'badge-red', color: 'var(--red)',
+      alt: 'A group of Big Walk players standing together on a high bridge' },
+    { tag: 'journeyC2Tag', title: 'journeyC2Title', desc: 'journeyC2Desc', to: '/topics/all-puzzles',
+      img: IMG.chairlift, pos: 'center', badge: 'badge-yellow', color: 'var(--yellow)',
+      alt: 'Big Walk players riding a chairlift over a green valley' },
+    { tag: 'journeyC3Tag', title: 'journeyC3Title', desc: 'journeyC3Desc', to: '/topics/map',
+      img: IMG.maproom, pos: 'center', badge: 'badge-green', color: 'var(--green)',
+      alt: 'The Big Walk map room with its full island diorama on the floor' },
+    { tag: 'journeyC4Tag', title: 'journeyC4Title', desc: 'journeyC4Desc', to: '/topics/all-puzzles',
+      img: IMG.playground, pos: 'center 68%', badge: 'badge-blue', color: 'var(--blue)',
+      alt: 'Players carrying tools across a colorful playground in Big Walk' },
+    { tag: 'journeyC5Tag', title: 'journeyC5Title', desc: 'journeyC5Desc', to: '/topics/crossplay',
+      img: IMG.group, pos: '72% center', badge: 'badge-orange', color: 'var(--orange)',
+      alt: 'A co-op squad of six players walking together in Big Walk' },
+  ];
+
+  /* Latest Guides:重点攻略(URL 不变) */
+  const latestCards = [
+    { tag: 'latestC1Tag', title: 'latestC1Title', desc: 'latestC1Desc', to: '/topics/red-tower-puzzle',
+      img: IMG.maproom, pos: '22% center', badge: 'badge-yellow',
+      alt: 'The red tower visible inside the Big Walk map room' },
+    { tag: 'latestC2Tag', title: 'latestC2Title', desc: 'latestC2Desc', to: '/topics/4166-1899-puzzle',
+      img: IMG.chairlift, pos: '30% 30%', badge: 'badge-red',
+      alt: 'A wide view over Big Walk island terrain while hunting coordinates' },
+    { tag: 'latestC3Tag', title: 'latestC3Title', desc: 'latestC3Desc', to: '/topics/map',
+      img: IMG.maproom, pos: 'center', badge: 'badge-green',
+      alt: 'Players gathered around the large floor map in the Big Walk map room' },
+    { tag: 'latestC4Tag', title: 'latestC4Title', desc: 'latestC4Desc', to: '/topics/all-puzzles',
+      img: IMG.playground, pos: '75% center', badge: 'badge-blue',
+      alt: 'Players exploring with gadgets in a colorful Big Walk playground' },
   ];
 
   const specs = [
@@ -23,53 +84,116 @@ export default function HomePage() {
     { label: t('specAchievements'), value: '12' },
   ];
 
-  const heroStats = [
-    { value: t('statReleasedValue'), label: t('statReleased') },
-    { value: t('statPlayersValue'), label: t('statPlayers') },
-    { value: t('statCrossplayValue'), label: t('statCrossplay') },
-    { value: t('statAchievementsValue'), label: t('statAchievements') },
-  ];
-
   return (
     <>
-      {/* ============ HERO ============ */}
-      <section className="section" style={{ paddingTop: '56px' }}>
+      {/* ============ HERO:宽幅真实游戏截图 + 左侧内容 ============ */}
+      <section className="hero-section">
         <div className="container">
-          <div className="kicker">{t('heroEyebrow')}</div>
-          <h1 style={{ maxWidth: '16ch' }}>{t('heroTitle')}</h1>
-          <p className="lead" style={{ marginTop: '1em' }}>{t('heroLead')}</p>
-          <div style={{ display: 'flex', gap: 12, marginTop: '24px', flexWrap: 'wrap' }}>
-            <Link href={href('/guide')} className="btn btn-primary">{t('ctaPrimary')}</Link>
-            <Link href={href('/topics/all-puzzles')} className="btn">{t('ctaSecondary')}</Link>
-            <Link href={href('/topics/map')} className="btn">{t('ctaTertiary')}</Link>
-          </div>
-          <div style={{ marginTop: 14, fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--text-mute)' }}>
-            {t('heroVideo')} · URL TBC
-          </div>
-
-          {/* 调研提供的四个真实数据 */}
-          <div className="stat-row">
-            {heroStats.map((s) => (
-              <div key={s.label}>
-                <div className="stat-num">{s.value}</div>
-                <div className="stat-label">{s.label}</div>
+          <div className="hero-card">
+            <div className="hero-media">
+              <Image
+                src={IMG.playground}
+                alt="Big Walk gameplay — three players crossing a colorful island playground"
+                fill
+                priority
+                quality={82}
+                sizes="100vw"
+                style={{ objectFit: 'cover' }}
+              />
+              <div className="hero-shade" />
+              <div className="hero-content">
+                <div className="hand" style={{ color: 'var(--yellow-bright)', fontSize: '1.32rem', textShadow: '0 1px 6px rgba(20,15,10,.45)' }}>
+                  ✷ {t('heroEyebrow')}
+                </div>
+                <h1 className="hero-title">
+                  {t('heroLine1')}
+                  <br />
+                  <span className="hw-red">{t('heroWordWalk')}</span>{' '}
+                  <span className="hw-blue">{t('heroWordTogether')}</span><span className="hw-yellow">.</span>
+                </h1>
+                <p className="hero-lead">{t('heroLead')}</p>
+                <div className="hero-ctas">
+                  <Link href={href('/guide')} className="btn btn-red">{t('ctaHero1')}</Link>
+                  <Link href={href('/topics/all-puzzles')} className="btn btn-yellow">{t('ctaHero2')}</Link>
+                  <Link href={href('/topics/map')} className="btn btn-blue">{t('ctaHero3')}</Link>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 游戏信息条:贴在 Hero 下缘的纸条 ============ */}
+      <div className="info-strip-wrap">
+        <div className="info-strip taped">
+          {infoStrip.map((s) => (
+            <div key={s.label} className="info-item">
+              {s.icon}
+              <div>
+                <div className="info-label">{s.label}</div>
+                <div className="info-value">{s.value}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ============ START YOUR JOURNEY(分类入口,5 张纸卡)============ */}
+      <section className="section" style={{ paddingTop: 72 }}>
+        <div className="container">
+          <div className="kicker">{t('journeyEyebrow')}</div>
+          <h2><span className="h2-doodle">{t('journeyTitle')}</span></h2>
+          <p className="lead">{t('journeyDesc')}</p>
+          <div className="journey-grid">
+            {journeyCards.map((c) => (
+              <Link key={c.title} href={href(c.to)} className="journey-card" style={{ '--jc': c.color } as CSSProperties}>
+                <div className="journey-thumb">
+                  <span className={`journey-badge ${c.badge}`}>{t(c.tag)}</span>
+                  <Image
+                    src={c.img}
+                    alt={c.alt}
+                    fill
+                    quality={72}
+                    sizes="(max-width: 520px) 92vw, (max-width: 700px) 46vw, (max-width: 1080px) 30vw, 19vw"
+                    style={{ objectFit: 'cover', objectPosition: c.pos }}
+                  />
+                </div>
+                <div className="journey-body">
+                  <h3 className="journey-name">{t(c.title)}</h3>
+                  <p className="journey-desc">{t(c.desc)}</p>
+                  <span className="journey-cta">{t('readGuide')} →</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ============ START HERE(新手引导)============ */}
+      {/* ============ LATEST GUIDES(重点攻略,URL 不变)============ */}
       <section className="section">
         <div className="container">
-          <div className="kicker kicker-dim">{t('startEyebrow')}</div>
-          <h2>{t('startTitle')}</h2>
-          <div className="grid grid-4" style={{ marginTop: 24 }}>
-            {startCards.map((c) => (
-              <Link key={c.n} href={href(c.to)} className="card">
-                <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--accent)', lineHeight: 1 }}>{c.n}</div>
-                <h3 className="card-title" style={{ marginTop: 10 }}>{c.title}</h3>
-                <p className="card-summary">{c.desc}</p>
+          <div className="kicker kicker-blue">{t('latestEyebrow')}</div>
+          <h2><span className="h2-doodle uw-blue">{t('latestTitle')}</span></h2>
+          <p className="lead">{t('latestDesc')}</p>
+          <div className="latest-grid">
+            {latestCards.map((c) => (
+              <Link key={c.title} href={href(c.to)} className="journey-card">
+                <div className="journey-thumb">
+                  <span className={`journey-badge ${c.badge}`}>{t(c.tag)}</span>
+                  <Image
+                    src={c.img}
+                    alt={c.alt}
+                    fill
+                    quality={72}
+                    sizes="(max-width: 560px) 92vw, (max-width: 1000px) 46vw, 23vw"
+                    style={{ objectFit: 'cover', objectPosition: c.pos }}
+                  />
+                </div>
+                <div className="journey-body">
+                  <h3 className="journey-name">{t(c.title)}</h3>
+                  <p className="journey-desc">{t(c.desc)}</p>
+                  <span className="journey-cta">{t('readGuide')} →</span>
+                </div>
               </Link>
             ))}
           </div>
@@ -79,22 +203,23 @@ export default function HomePage() {
       {/* ============ WHAT IS BIG WALK(游戏介绍)============ */}
       <section className="section">
         <div className="container">
-          <h2>{t('aboutTitle')}</h2>
+          <div className="kicker kicker-green">{t('aboutEyebrow')}</div>
+          <h2><span className="h2-doodle uw-green">{t('aboutTitle')}</span></h2>
           <p className="lead" style={{ marginTop: '1em' }}>{t('aboutP1')}</p>
           <p className="lead">{t('aboutP2')}</p>
 
-          <div className="card" style={{ marginTop: 28 }}>
+          <div className="paper-note taped" style={{ marginTop: 34 }}>
             <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px 32px', margin: 0 }}>
               {specs.map((s) => (
-                <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, fontSize: '0.88rem', borderBottom: '1px solid var(--line-soft)', paddingBottom: 10 }}>
+                <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', gap: 12, fontSize: '0.88rem', borderBottom: '1px dashed var(--line)', paddingBottom: 10 }}>
                   <dt style={{ color: 'var(--text-mute)', letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.72rem', paddingTop: 2 }}>{s.label}</dt>
-                  <dd style={{ margin: 0, color: 'var(--cream)', fontWeight: 600, textAlign: 'right' }}>{s.value}</dd>
+                  <dd style={{ margin: 0, color: 'var(--cream)', fontWeight: 700, textAlign: 'right' }}>{s.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
 
-          <div style={{ marginTop: 20 }}>
+          <div style={{ marginTop: 22 }}>
             <Link href={href('/topics')} className="btn btn-primary">{t('aboutCta')}</Link>
           </div>
         </div>
@@ -103,9 +228,9 @@ export default function HomePage() {
       {/* ============ REDEMPTION CODES(兑换码 —— 调研无码,如实标注)============ */}
       <section className="section">
         <div className="container-narrow">
-          <div className="card">
-            <div className="kicker">{t('codesTitle')}</div>
-            <div style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--cream)', margin: '6px 0' }}>{t('codesNone')}</div>
+          <div className="paper-note">
+            <div className="kicker kicker-orange">{t('codesTitle')}</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--cream)', margin: '6px 0', fontFamily: 'var(--font-display)' }}>{t('codesNone')}</div>
             <p style={{ color: 'var(--text-dim)', margin: 0, fontSize: '0.92rem' }}>{t('codesNote')}</p>
           </div>
         </div>
@@ -114,6 +239,7 @@ export default function HomePage() {
       {/* ============ FINAL CTA ============ */}
       <section className="section">
         <div className="container-narrow" style={{ textAlign: 'center' }}>
+          <div className="hand" style={{ fontSize: '1.4rem', color: 'var(--blue)' }}>☞</div>
           <h2 style={{ maxWidth: '24ch', margin: '0 auto' }}>{t('finalTitle')}</h2>
           <p className="lead" style={{ margin: '1em auto' }}>{t('finalDesc')}</p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
