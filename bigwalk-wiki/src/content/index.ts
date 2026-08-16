@@ -24,6 +24,7 @@ import howLongToBeatEn from './how-long-to-beat.en.mdx';
 import allPuzzlesEn from './all-puzzles.en.mdx';
 import mapEn from './map.en.mdx';
 import trophyGuideEn from './trophy-guide.en.mdx';
+import puzzle4166En from './4166-1899-puzzle.en.mdx';
 // Mods
 import modsEn from './mods.en.mdx';
 import onlineFixEn from './online-fix.en.mdx';
@@ -62,6 +63,7 @@ export const mdxIndex: Record<string, { default: any }> = {
   'all-puzzles.en': { default: allPuzzlesEn },
   'map.en': { default: mapEn },
   'trophy-guide.en': { default: trophyGuideEn },
+  '4166-1899-puzzle.en': { default: puzzle4166En },
   // Mods
   'mods.en': { default: modsEn },
   'online-fix.en': { default: onlineFixEn },

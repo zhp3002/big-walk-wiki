@@ -116,6 +116,11 @@ export const topicMeta: Record<string, TopicMeta> = {
     description: 'Big Walk trophy guide: the game has 12 achievements, with the full list and unlock details still to be confirmed. What we know about the achievement set.',
     keywords: 'big walk trophy guide, big walk achievements, big walk platinum',
   },
+  '4166-1899-puzzle': {
+    title: 'Big Walk 4166 1899 Puzzle Solution & Coordinates Guide',
+    description: '4166 and 1899 in Big Walk are not a code. They are coordinates that point to a hidden button. Here is how to solve the number puzzle with the map or the GPS.',
+    keywords: 'big walk 4166 1899, big walk number puzzle, big walk coordinates puzzle, big walk map coordinates, big walk gps puzzle',
+  },
   mods: {
     title: 'Big Walk Mods: Mod Support Status & Custom Content',
     description: 'Big Walk mod support is unconfirmed. As an online co-op adventure with crossplay, it is not a traditional mod-friendly game. What we know about Big Walk mods.',
