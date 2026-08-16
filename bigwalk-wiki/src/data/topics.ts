@@ -140,7 +140,7 @@ export const topics: Topic[] = [
     keywords: 'big walk map',
     tags: ['MAP', 'OPEN WORLD', 'ISLAND'], hasMdx: true,
     summary: 'An open-world island of brightly colored monuments, puzzle structures and towers — no map screen or quest markers.',
-    pairsWith: ['all-puzzles', '4166-1899-puzzle'] },
+    pairsWith: ['all-puzzles', '4166-1899-puzzle', 'tools'] },
   { slug: 'trophy-guide', code: 'GID-04', name: 'Trophy / Achievement Guide', category: 'guide',
     keywords: 'big walk trophy guide',
     tags: ['TROPHY', 'ACHIEVEMENT', 'TBD'], hasMdx: true,
@@ -156,6 +156,11 @@ export const topics: Topic[] = [
     tags: ['TOWER', 'PUZZLE', 'MAP ROOM'], hasMdx: true,
     summary: 'Five nearby puzzles feed the Red Tower. Its key opens the Map Room — a foldable map, a compass and a full island diorama.',
     pairsWith: ['4166-1899-puzzle', 'map', 'all-puzzles'] },
+  { slug: 'tools', code: 'GID-07', name: 'Tools & Items', category: 'guide',
+    keywords: 'big walk tools / big walk items / big walk tools and gadgets',
+    tags: ['TOOLS', 'ITEMS', 'WALKIE-TALKIE'], hasMdx: true,
+    summary: 'Every Big Walk tool and where it lives: the map and compass in the Map Room, the GPS by the green tower, walkie-talkies, binoculars and backpacks.',
+    pairsWith: ['red-tower-puzzle', '4166-1899-puzzle', 'map'] },
 
   // ---- Mods ----
   { slug: 'mods', code: 'MOD-01', name: 'Mods', category: 'mods',

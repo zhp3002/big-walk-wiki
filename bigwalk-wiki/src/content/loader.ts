@@ -126,6 +126,11 @@ export const topicMeta: Record<string, TopicMeta> = {
     description: 'Big Walk Red Tower puzzle guide: solve the five nearby puzzles, file the key, and open the Map Room to get the foldable map and the compass.',
     keywords: 'big walk red tower puzzle, big walk red tower, big walk red tower solution, big walk map room, big walk map room puzzle, big walk how to unlock map, big walk how to get map, big walk red tower collectibles',
   },
+  tools: {
+    title: 'Big Walk Tools & Items Guide: Map, GPS, Walkie-Talkie',
+    description: 'Big Walk tools and items guide: where to find the map, compass, GPS, walkie-talkies and binoculars, how each gadget works, and what to grab first.',
+    keywords: 'big walk tools, big walk items, big walk map, big walk gps, big walk compass, big walk walkie talkie, big walk binoculars, big walk tools and gadgets',
+  },
   mods: {
     title: 'Big Walk Mods: Mod Support Status & Custom Content',
     description: 'Big Walk mod support is unconfirmed. As an online co-op adventure with crossplay, it is not a traditional mod-friendly game. What we know about Big Walk mods.',

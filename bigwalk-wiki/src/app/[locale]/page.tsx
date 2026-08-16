@@ -11,6 +11,16 @@ const IMG = {
   maproom: '/images/shot-d.jpg',               // 地图室内的全岛立体模型
 };
 
+/* 官方 Press Kit 截图(bigwalk.panicfiles.com,3840x2160 原图已转 2560x1440 JPG) */
+const PK = {
+  beach: '/images/shot-presskit-01.jpg',       // 夕阳沙滩上的两名玩家
+  cliff: '/images/shot-presskit-02.jpg',       // 海岸悬崖上携带装备的三名玩家
+  grassland: '/images/shot-presskit-03.jpg',   // 草原上同行的四名玩家
+  walkway: '/images/shot-presskit-05.jpg',     // 通往圆顶绿屋的高架步道
+  platform: '/images/shot-presskit-06.jpg',    // 红色滑道旁的落日观景台
+  tower: '/images/shot-presskit-07.jpg',       // 黄塔下垂挂的七人小队
+};
+
 /* 信息条小图标(纯描边 SVG,继承分类色) */
 const stroke = { fill: 'none', strokeWidth: 2, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
 const IconCal = ({ c }: { c: string }) => (
@@ -45,33 +55,33 @@ export default function HomePage() {
       img: IMG.group, pos: 'center', badge: 'badge-red', color: 'var(--red)',
       alt: 'A group of Big Walk players standing together on a high bridge' },
     { tag: 'journeyC2Tag', title: 'journeyC2Title', desc: 'journeyC2Desc', to: '/topics/all-puzzles',
-      img: IMG.chairlift, pos: 'center', badge: 'badge-yellow', color: 'var(--yellow)',
-      alt: 'Big Walk players riding a chairlift over a green valley' },
+      img: PK.tower, pos: 'center', badge: 'badge-yellow', color: 'var(--yellow)',
+      alt: 'A chain of seven Big Walk players hanging from a tall yellow tower' },
     { tag: 'journeyC3Tag', title: 'journeyC3Title', desc: 'journeyC3Desc', to: '/topics/map',
       img: IMG.maproom, pos: 'center', badge: 'badge-green', color: 'var(--green)',
       alt: 'The Big Walk map room with its full island diorama on the floor' },
-    { tag: 'journeyC4Tag', title: 'journeyC4Title', desc: 'journeyC4Desc', to: '/topics/all-puzzles',
-      img: IMG.playground, pos: 'center 68%', badge: 'badge-blue', color: 'var(--blue)',
-      alt: 'Players carrying tools across a colorful playground in Big Walk' },
+    { tag: 'journeyC4Tag', title: 'journeyC4Title', desc: 'journeyC4Desc', to: '/topics/tools',
+      img: PK.cliff, pos: 'center', badge: 'badge-blue', color: 'var(--blue)',
+      alt: 'Three Big Walk players on a coastal cliff carrying tools and gear' },
     { tag: 'journeyC5Tag', title: 'journeyC5Title', desc: 'journeyC5Desc', to: '/topics/crossplay',
-      img: IMG.group, pos: '72% center', badge: 'badge-orange', color: 'var(--orange)',
-      alt: 'A co-op squad of six players walking together in Big Walk' },
+      img: PK.grassland, pos: 'center', badge: 'badge-orange', color: 'var(--orange)',
+      alt: 'Four Big Walk players walking together across an open grassland' },
   ];
 
   /* Latest Guides:重点攻略(URL 不变) */
   const latestCards = [
     { tag: 'latestC1Tag', title: 'latestC1Title', desc: 'latestC1Desc', to: '/topics/red-tower-puzzle',
-      img: IMG.maproom, pos: '22% center', badge: 'badge-yellow',
-      alt: 'The red tower visible inside the Big Walk map room' },
+      img: PK.platform, pos: 'center', badge: 'badge-yellow',
+      alt: 'Two Big Walk players on a platform beside a red track at sunset' },
     { tag: 'latestC2Tag', title: 'latestC2Title', desc: 'latestC2Desc', to: '/topics/4166-1899-puzzle',
       img: IMG.chairlift, pos: '30% 30%', badge: 'badge-red',
       alt: 'A wide view over Big Walk island terrain while hunting coordinates' },
     { tag: 'latestC3Tag', title: 'latestC3Title', desc: 'latestC3Desc', to: '/topics/map',
-      img: IMG.maproom, pos: 'center', badge: 'badge-green',
-      alt: 'Players gathered around the large floor map in the Big Walk map room' },
+      img: PK.walkway, pos: 'center', badge: 'badge-green',
+      alt: 'Five Big Walk players on an elevated walkway to a round green structure' },
     { tag: 'latestC4Tag', title: 'latestC4Title', desc: 'latestC4Desc', to: '/topics/all-puzzles',
-      img: IMG.playground, pos: '75% center', badge: 'badge-blue',
-      alt: 'Players exploring with gadgets in a colorful Big Walk playground' },
+      img: PK.beach, pos: 'center', badge: 'badge-blue',
+      alt: 'Two Big Walk players meeting on a beach at sunset' },
   ];
 
   const specs = [
