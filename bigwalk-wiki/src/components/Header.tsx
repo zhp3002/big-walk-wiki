@@ -48,10 +48,10 @@ export default function Header() {
           <Link href={`/${locale}`}>{t('home')}</Link>
           <Link href={`/${locale}/topics`}>{t('topics')}</Link>
           <Link href={`/${locale}/guide`}>{t('guide')}</Link>
-          <Link href={`/${locale}/topics/release-date`}>Release Date</Link>
-          <Link href={`/${locale}/topics/steam`}>Steam</Link>
-          <Link href={`/${locale}/topics/crossplay`}>Crossplay</Link>
-          <Link href={`/${locale}/topics/trophy-guide`}>Trophy Guide</Link>
+          <Link href={`/${locale}/topics/release-date`}>{t('mRelease')}</Link>
+          <Link href={`/${locale}/topics/steam`}>{t('mSteam')}</Link>
+          <Link href={`/${locale}/topics/crossplay`}>{t('mCrossplay')}</Link>
+          <Link href={`/${locale}/topics/trophy-guide`}>{t('mTrophy')}</Link>
         </div>
       )}
     </header>

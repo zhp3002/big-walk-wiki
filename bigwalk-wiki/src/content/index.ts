@@ -1,4 +1,4 @@
-// 汇总所有 MDX,以 "slug.locale" 为键,供 loader 索引
+﻿// 姹囨€绘墍鏈?MDX,浠?"slug.locale" 涓洪敭,渚?loader 绱㈠紩
 // Release
 import releaseDateEn from './release-date.en.mdx';
 import releaseTimeEn from './release-time.en.mdx';

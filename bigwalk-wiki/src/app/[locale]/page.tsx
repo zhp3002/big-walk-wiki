@@ -88,9 +88,9 @@ export default function HomePage() {
     { label: t('specDeveloper'), value: 'House House' },
     { label: t('specPublisher'), value: 'Panic' },
     { label: t('specPlatforms'), value: 'PC, Mac, PS5, Nintendo Switch 2' },
-    { label: t('specGenre'), value: 'Co-op Adventure' },
+    { label: t('specGenre'), value: t('specGenreValue') },
     { label: t('specPlayers'), value: '2–12' },
-    { label: t('specMultiplayer'), value: 'Online Co-op & Crossplay' },
+    { label: t('specMultiplayer'), value: t('specMultiplayerValue') },
     { label: t('specAchievements'), value: '12' },
   ];
 
