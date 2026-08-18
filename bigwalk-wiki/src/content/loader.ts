@@ -112,9 +112,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk map, big walk island, big walk locations, big walk world',
   },
   'trophy-guide': {
-    title: 'Big Walk Trophy Guide: 12 Achievements List (TBD)',
-    description: 'Big Walk trophy guide: the game has 12 achievements, with the full list and unlock details still to be confirmed. What we know about the achievement set.',
-    keywords: 'big walk trophy guide, big walk achievements, big walk platinum',
+    title: 'Big Walk Trophy Guide: All 13 Achievements & Easy Platinum',
+    description: 'Big Walk has 13 trophies (1 platinum, 10 gold, 2 silver) — all simple co-op milestones. The full list, every unlock condition, and how long the platinum takes.',
+    keywords: 'big walk trophy guide, big walk achievements, big walk trophies, big walk platinum, big walk all trophies',
   },
   '4166-1899-puzzle': {
     title: 'Big Walk 4166 1899 Puzzle Solution & Coordinates Guide',
