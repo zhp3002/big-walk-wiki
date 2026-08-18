@@ -77,9 +77,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk split screen, big walk local coop, big walk couch co op',
   },
   'player-count': {
-    title: 'Big Walk Player Count: How Many People Are Playing',
-    description: 'Big Walk player count and concurrent players on Steam can be tracked via SteamDB and Steam Charts. Where to check live Big Walk online numbers after the launch.',
-    keywords: 'big walk player count, big walk concurrent players, how many people playing big walk',
+    title: 'Big Walk Player Count: Peak 46,409 & Live Numbers',
+    description: 'Big Walk hit an all-time peak of 46,409 concurrent Steam players on August 5, 2026, with ~1 million copies sold in week one. Where to check the live Big Walk player count.',
+    keywords: 'big walk player count, big walk concurrent players, how many people playing big walk, big walk peak players',
   },
   price: {
     title: 'Big Walk Price: How Much It Costs on PC, PS5 & Switch 2',
@@ -92,9 +92,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk review, big walk reviews, big walk impressions, is big walk good',
   },
   metacritic: {
-    title: 'Big Walk Metacritic Score: Critic Reviews & Ratings',
-    description: 'Big Walk Metacritic score and ratings. IGN, Kotaku, GameSpot and Polygon reviews are highly positive and call it a 2026 standout. Where to check the score.',
-    keywords: 'big walk metacritic, big walk score, big walk rating, big walk critic score',
+    title: 'Big Walk Metacritic Score: 93-94 on PC — 2026 Best Rated',
+    description: 'Big Walk\'s Metacritic score is 93-94 on PC (~25 reviews) — the highest-rated new release of 2026 — with PS5 in the mid-80s and OpenCritic at 89. Full reception breakdown.',
+    keywords: 'big walk metacritic, big walk score, big walk rating, big walk critic score, big walk review score',
   },
   'how-long-to-beat': {
     title: 'How Long to Beat Big Walk: Main Story & 100% Times',
@@ -152,9 +152,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk trailer, big walk gameplay trailer, big walk reveal',
   },
   'steam-charts': {
-    title: 'Big Walk Steam Charts & SteamDB: Player Count Tracker',
-    description: 'Big Walk Steam Charts and SteamDB track concurrent players, peak online numbers since the August 2026 launch. Where to check live Big Walk player data on Steam.',
-    keywords: 'big walk steam charts, big walk steamdb, big walk concurrent players steam',
+    title: 'Big Walk Steam Charts & SteamDB: Peak 46,409 Tracked',
+    description: 'Big Walk on Steam Charts and SteamDB: an all-time peak of 46,409 concurrent players on August 5, 2026, and how to read the live tracker data for the co-op campaign.',
+    keywords: 'big walk steam charts, big walk steamdb, big walk concurrent players steam, big walk steam peak',
   },
   wiki: {
     title: 'Big Walk Wiki: Best Guide & Walkthrough Sites',
