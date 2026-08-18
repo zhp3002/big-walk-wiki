@@ -32,9 +32,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk ps5 release date, big walk playstation, big walk psn',
   },
   steam: {
-    title: 'Big Walk on Steam: PC & Mac Release, Price, and Crossplay',
-    description: 'Big Walk is on Steam for PC and Mac, released August 4, 2026. It supports crossplay with PS5 and Switch 2, 2-12 player co-op, and proximity voice chat.',
-    keywords: 'big walk steam, big walk pc, big walk mac, big walk steam price',
+    title: 'Big Walk on Steam: $19.99 Price, PC & Mac, Crossplay',
+    description: 'Big Walk is on Steam for PC and Mac at $19.99, released August 4, 2026. It supports crossplay with PS5 and Switch 2, 2-12 player co-op, and proximity voice chat.',
+    keywords: 'big walk steam, big walk pc, big walk mac, big walk steam price, big walk $19.99',
   },
   ps5: {
     title: 'Big Walk on PS5: Release, PS Plus Free Offer, Crossplay',
@@ -82,9 +82,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk player count, big walk concurrent players, how many people playing big walk, big walk peak players',
   },
   price: {
-    title: 'Big Walk Price: How Much It Costs on PC, PS5 & Switch 2',
-    description: 'Big Walk price across PC, Mac, PS5 and Nintendo Switch 2 — plus how PS Plus members got it free at launch. The full cost breakdown and the best deals.',
-    keywords: 'big walk price, big walk cost, big walk game price, how much will big walk cost',
+    title: 'Big Walk Price: $19.99 on Steam, Free on PS Plus at Launch',
+    description: 'Big Walk costs $19.99 on Steam (PC/Mac). It was free at launch for PS Plus members on PS5, and the Switch 2 eShop carries a paid listing. Full cost breakdown.',
+    keywords: 'big walk price, big walk cost, big walk game price, how much does big walk cost, big walk steam price',
   },
   review: {
     title: 'Big Walk Review Roundup: IGN, Kotaku, GameSpot, Polygon',
