@@ -16,10 +16,25 @@ export function generateMetadata({ params }: { params: { slug: string; locale?: 
   if (!meta) return {};
   const locale = (locales.includes(params.locale as Locale) ? params.locale : 'en') as Locale;
   const loc = localMeta(params.slug, locale);
+  const BASE = 'https://www.bigwalkguide.xyz';
+  const path = `/topics/${params.slug}`;
+  // hreflang alternates:指向同一内页的各语言版本(覆盖 layout 里指向首页的错误继承)
+  const languages = Object.fromEntries(
+    locales.map((l) => [l, `${BASE}/${l}${path}`])
+  );
+  languages['x-default'] = `${BASE}/en${path}`;
   return {
     title: loc.title ?? meta.title,
     description: loc.description ?? meta.description,
     keywords: meta.keywords,
+    alternates: { canonical: `${BASE}/${locale}${path}`, languages },
+    openGraph: {
+      title: loc.title ?? meta.title,
+      description: loc.description ?? meta.description,
+      url: `${BASE}/${locale}${path}`,
+      type: 'article',
+      images: [{ url: `${BASE}/images/topics/${params.slug === 'tools' ? 'tools/radio-sunset.jpg' : 'map/landmark-lime.jpg'}` }],
+    },
   };
 }
 

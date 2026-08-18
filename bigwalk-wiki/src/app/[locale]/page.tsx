@@ -2,6 +2,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { CSSProperties } from 'react';
+import type { Metadata } from 'next';
+import { locales } from '../../locale-config/routing';
+
+// 首页自己的 hreflang alternates(各语言首页互指,canonical 指向自身语言)
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  const base = 'https://www.bigwalkguide.xyz';
+  const languages = Object.fromEntries(
+    locales.map((l) => [l, `${base}/${l}`])
+  );
+  languages['x-default'] = `${base}/en`;
+  return { alternates: { canonical: `${base}/${params.locale}`, languages } };
+}
 
 /* 真实 Big Walk 游戏截图(用户提供于 /images,已复制到 public/images) */
 const IMG = {

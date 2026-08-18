@@ -8,14 +8,11 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-// hreflang alternates: 每个语言版本的首页互指
+// metadataBase 放在 layout;hreflang/canonical 由各页面自己声明
+// (此前在这里声明 languages 会被所有子页继承,导致内页 hreflang 错误指向各语言首页)
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const base = 'https://www.bigwalkguide.xyz';
-  const languages = Object.fromEntries(
-    locales.map((l) => [l, `${base}/${l}`])
-  );
-  languages['x-default'] = `${base}/en`;
-  return { metadataBase: new URL(base), alternates: { languages } };
+  return { metadataBase: new URL(base) };
 }
 
 export default function LocaleLayout({
