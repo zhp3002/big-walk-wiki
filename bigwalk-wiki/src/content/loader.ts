@@ -122,8 +122,8 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk 4166 1899, big walk number puzzle, big walk coordinates puzzle, big walk map coordinates, big walk gps puzzle',
   },
   'red-tower-puzzle': {
-    title: 'Big Walk Red Tower Puzzle Guide — Unlock the Map Room',
-    description: 'Big Walk Red Tower puzzle guide: solve the five nearby puzzles, file the key, and open the Map Room to get the foldable map and the compass.',
+    title: 'Big Walk Red Tower Puzzle: All 5 Puzzles & Map Room Unlock',
+    description: 'How to unlock the Map Room in Big Walk: solve the 5 Red Tower puzzles (Yellow Maze, Button Room, Timer Cannon, Basketball, Gestures), file the key, get the map.',
     keywords: 'big walk red tower puzzle, big walk red tower, big walk red tower solution, big walk map room, big walk map room puzzle, big walk how to unlock map, big walk how to get map, big walk red tower collectibles',
   },
   tools: {
