@@ -97,9 +97,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk metacritic, big walk score, big walk rating, big walk critic score',
   },
   'how-long-to-beat': {
-    title: 'How Long to Beat Big Walk: Completion Time Guide',
-    description: 'How long does it take to beat Big Walk? About 20 hours, with puzzles still left at that mark plus a post-game. A hand-crafted campaign played start to finish.',
-    keywords: 'big walk how long to beat, big walk length, how long is big walk',
+    title: 'How Long to Beat Big Walk: Main Story & 100% Times',
+    description: 'How long is Big Walk? About 11 hours for the main story and 20 hours for 100% completion, per HowLongToBeat player data and reviewer pace. Full time breakdown.',
+    keywords: 'big walk how long to beat, big walk length, how long is big walk, big walk completion time',
   },
   'all-puzzles': {
     title: 'Big Walk All Puzzles: Mechanics, Beans, Towers & Solutions',
