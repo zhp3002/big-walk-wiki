@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { topics } from '../data/topics';
 import { locales, defaultLocale } from '../locale-config/routing';
+import lastmodMap from '../data/lastmod.json';
 
 // 正式域名 —— 部署在 Vercel,绑定 https://www.bigwalkguide.xyz
 const BASE = 'https://www.bigwalkguide.xyz';
@@ -13,7 +14,7 @@ interface PageEntry {
   changeFrequency: ChangeFrequency;
 }
 
-// 需要被 Google 索引的全部公开页面:固定页 + 27 个关键词内页
+// 需要被 Google 索引的全部公开页面:固定页 + 关键词内页
 // (topics 列表来自 data/topics.ts,新增内页自动进 sitemap)
 const pageEntries: PageEntry[] = [
   { path: '', priority: 1.0, changeFrequency: 'weekly' },
@@ -28,12 +29,18 @@ const pageEntries: PageEntry[] = [
   })),
 ];
 
+// 各路径的真实最后修改时间(scripts/gen-lastmod.mjs 在 prebuild 用 git 生成)
+// 同一 path 的四语共用一个时间戳(内容同属一个页面实体);缺失时回退当前时间
+const realLastmod = (path: string): Date => {
+  const iso = (lastmodMap as Record<string, string>)[path];
+  return iso ? new Date(iso) : new Date();
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   return locales.flatMap((locale) =>
     pageEntries.map(({ path, priority, changeFrequency }) => ({
       url: `${BASE}/${locale}${path}`,
-      lastModified,
+      lastModified: realLastmod(path),
       changeFrequency,
       priority,
       alternates: {
