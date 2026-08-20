@@ -67,6 +67,7 @@ import toolsJa from './tools.ja.mdx';
 import trailerJa from './trailer.ja.mdx';
 import trophyGuideJa from './trophy-guide.ja.mdx';
 import wikiJa from './wiki.ja.mdx';
+import joinCodesJa from './join-codes.ja.mdx';
 import xboxJa from './xbox.ja.mdx';
 // DE
 import puzzle4166De from './4166-1899-puzzle.de.mdx';
@@ -98,6 +99,7 @@ import toolsDe from './tools.de.mdx';
 import trailerDe from './trailer.de.mdx';
 import trophyGuideDe from './trophy-guide.de.mdx';
 import wikiDe from './wiki.de.mdx';
+import joinCodesDe from './join-codes.de.mdx';
 import xboxDe from './xbox.de.mdx';
 // ES
 import puzzle4166Es from './4166-1899-puzzle.es.mdx';
@@ -129,6 +131,7 @@ import toolsEs from './tools.es.mdx';
 import trailerEs from './trailer.es.mdx';
 import trophyGuideEs from './trophy-guide.es.mdx';
 import wikiEs from './wiki.es.mdx';
+import joinCodesEs from './join-codes.es.mdx';
 import xboxEs from './xbox.es.mdx';
 // Fallback
 import defaultEn from './default.en.mdx';
@@ -202,6 +205,7 @@ export const mdxIndex: Record<string, { default: any }> = {
   'trailer.ja': { default: trailerJa },
   'trophy-guide.ja': { default: trophyGuideJa },
   'wiki.ja': { default: wikiJa },
+  'join-codes.ja': { default: joinCodesJa },
   'xbox.ja': { default: xboxJa },
   // DE
   '4166-1899-puzzle.de': { default: puzzle4166De },
@@ -233,6 +237,7 @@ export const mdxIndex: Record<string, { default: any }> = {
   'trailer.de': { default: trailerDe },
   'trophy-guide.de': { default: trophyGuideDe },
   'wiki.de': { default: wikiDe },
+  'join-codes.de': { default: joinCodesDe },
   'xbox.de': { default: xboxDe },
   // ES
   '4166-1899-puzzle.es': { default: puzzle4166Es },
@@ -264,6 +269,7 @@ export const mdxIndex: Record<string, { default: any }> = {
   'trailer.es': { default: trailerEs },
   'trophy-guide.es': { default: trophyGuideEs },
   'wiki.es': { default: wikiEs },
+  'join-codes.es': { default: joinCodesEs },
   'xbox.es': { default: xboxEs },
   // Fallback
   'default.en': { default: defaultEn },
