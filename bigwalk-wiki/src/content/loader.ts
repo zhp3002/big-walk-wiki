@@ -72,9 +72,9 @@ export const topicMeta: Record<string, TopicMeta> = {
     keywords: 'big walk solo, can you play big walk single player, big walk replayable',
   },
   'split-screen': {
-    title: 'Big Walk Split Screen & Local Co-op: Couch Co-op Status',
-    description: 'Whether Big Walk supports split screen or local couch co-op is unconfirmed. House House focused on online co-op with proximity voice chat. What we know so far.',
-    keywords: 'big walk split screen, big walk local coop, big walk couch co op',
+    title: 'Big Walk Split Screen & Couch Co-op: Not Supported (PS5 Too)',
+    description: 'No — Big Walk has no split screen or local couch co-op on PC, PS5 or Switch 2, per the official FAQ. How to play with someone in the same room via crossplay.',
+    keywords: 'big walk split screen, big walk local coop, big walk couch co op, big walk ps5 split screen',
   },
   'player-count': {
     title: 'Big Walk Player Count: Peak 46,409 & Live Numbers',
