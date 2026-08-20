@@ -83,7 +83,7 @@ export const topicMeta: Record<string, TopicMeta> = {
   },
   'join-codes': {
     title: 'Big Walk Join Codes on PS5: How to Get & Enter Codes',
-    description: 'How to use Big Walk join codes on PS5 — where to find your code, how to enter a friend\'s code, cross-play with PC and Switch 2, and fixes for "Connection to Host Timed Out."',
+    description: 'How to use Big Walk join codes on PS5 — where to find your code, how to enter a friend\'s code, cross-play with PC, and fixes for timed-out connection errors.',
     keywords: 'big walk join codes ps5, big walk join code, big walk session code, big walk code not working',
   },
   price: {

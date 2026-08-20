@@ -7,6 +7,16 @@ import { locales, type Locale } from '../../../../locale-config/routing';
 import TopicCard from '../../../../components/TopicCard';
 import { loadTopicMdx, topicMeta } from '../../../../content/loader';
 
+// 各 topic 的 og:image 专属图;无专属图的页面用地图室通用图
+const OG_IMAGES: Record<string, string> = {
+  '4166-1899-puzzle': '/images/topics/4166/gps-readout.jpg',
+  'join-codes': '/images/topics/join-codes/host-menu.jpg',
+  map: '/images/topics/map/landmark-lime.jpg',
+  'red-tower-puzzle': '/images/topics/red-tower/rt-tower.jpg',
+  tools: '/images/topics/tools/radio-sunset.jpg',
+};
+const ogImage = (slug: string) => OG_IMAGES[slug] ?? '/images/topics/map/landmark-lime.jpg';
+
 export function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
 }
@@ -33,7 +43,7 @@ export function generateMetadata({ params }: { params: { slug: string; locale?: 
       description: loc.description ?? meta.description,
       url: `${BASE}/${locale}${path}`,
       type: 'article',
-      images: [{ url: `${BASE}/images/topics/${params.slug === 'tools' ? 'tools/radio-sunset.jpg' : 'map/landmark-lime.jpg'}` }],
+      images: [{ url: `${BASE}${ogImage(params.slug)}` }],
     },
   };
 }
