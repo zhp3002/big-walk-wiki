@@ -15,6 +15,7 @@ import maxPlayersEn from './max-players.en.mdx';
 import soloEn from './solo.en.mdx';
 import splitScreenEn from './split-screen.en.mdx';
 import playerCountEn from './player-count.en.mdx';
+import joinCodesEn from './join-codes.en.mdx';
 // Price / Review
 import priceEn from './price.en.mdx';
 import reviewEn from './review.en.mdx';
@@ -149,6 +150,7 @@ export const mdxIndex: Record<string, { default: any }> = {
   'solo.en': { default: soloEn },
   'split-screen.en': { default: splitScreenEn },
   'player-count.en': { default: playerCountEn },
+  'join-codes.en': { default: joinCodesEn },
   // Price / Review
   'price.en': { default: priceEn },
   'review.en': { default: reviewEn },
