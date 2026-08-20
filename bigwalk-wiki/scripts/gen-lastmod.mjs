@@ -1,12 +1,29 @@
 // 构建前生成各页面真实 lastmod(git 最后提交时间)→ src/data/lastmod.json
 // sitemap.ts 读取;git 不可用或查询失败时该路径不写入,sitemap 回退当前时间
 import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const locales = ['en', 'ja', 'de', 'es'];
+
+// Vercel 等环境是浅克隆(depth~10):窗口外的文件 git log 会塌缩到边界提交,
+// 时间戳失真。浅克隆时只补缺失键,不覆盖已提交的准确值(由本地全量仓库生成)。
+function isShallow() {
+  try {
+    return execFileSync('git', ['rev-parse', '--is-shallow-repository'], {
+      cwd: root, stdio: ['ignore', 'pipe', 'ignore'],
+    }).toString().trim() === 'true';
+  } catch {
+    return true; // git 都不可用时同样只读已有文件
+  }
+}
+const shallow = isShallow();
+const outPath = path.join(root, 'src/data/lastmod.json');
+const map = shallow && existsSync(outPath)
+  ? JSON.parse(readFileSync(outPath, 'utf8'))
+  : {};
 
 function gitDate(file) {
   try {
@@ -28,7 +45,10 @@ function latest(files) {
   return max;
 }
 
-const map = {};
+// 浅克隆:只补缺失,保留已提交的准确值;本地全量:始终刷新
+const set = (p, d) => {
+  if (d && !(shallow && p in map)) map[p] = d;
+};
 
 // 固定页:取各自页面源文件的最后提交时间
 const fixed = {
@@ -40,7 +60,7 @@ const fixed = {
 };
 for (const [p, files] of Object.entries(fixed)) {
   const d = latest(files) ?? gitDate('src/app/[locale]/layout.tsx');
-  if (d) map[p] = d;
+  set(p, d);
 }
 
 // topic 页:取该 slug 所有语言 mdx 的最新提交时间
@@ -54,8 +74,8 @@ for (const slug of topics) {
   files.push(`src/content/${slug}.en.mdx`); // 未翻译语言回退 EN 正文,EN 的时间也算数
   let d = latest(files);
   if (!d) d = gitDate('src/data/topics.ts'); // 无专属 mdx 的 slug 兜底
-  if (d) map[`/topics/${slug}`] = d;
+  set(`/topics/${slug}`, d);
 }
 
-writeFileSync(path.join(root, 'src/data/lastmod.json'), JSON.stringify(map, null, 2) + '\n');
-console.log(`lastmod.json generated: ${Object.keys(map).length} paths`);
+writeFileSync(outPath, JSON.stringify(map, null, 2) + '\n');
+console.log(`lastmod.json ${shallow ? 'merged(shallow)' : 'generated'}: ${Object.keys(map).length} paths`);
