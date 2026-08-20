@@ -105,6 +105,11 @@ export const topics: Topic[] = [
     tags: ['CONCURRENT', 'STEAMDB', 'TBD'], hasMdx: true,
     summary: 'Live Big Walk player counts appear on SteamDB and Steam Charts once the game launches. Exact numbers are TBC.',
     pairsWith: ['steam', 'review'] },
+  { slug: 'join-codes', code: 'MUL-05', name: 'Join Codes (PS5)', category: 'multiplayer',
+    keywords: 'big walk join codes ps5 / big walk join code / big walk session code',
+    tags: ['JOIN CODE', 'PS5', 'MULTIPLAYER'], hasMdx: true,
+    summary: 'Every Big Walk session has a Join Code — the host finds it on the Host Game screen, friends enter it via Join Game. Works cross-platform.',
+    pairsWith: ['crossplay', 'split-screen', 'max-players'] },
 
   // ---- Price ----
   { slug: 'price', code: 'PRI-01', name: 'Price', category: 'price',

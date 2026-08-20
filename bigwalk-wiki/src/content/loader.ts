@@ -81,6 +81,11 @@ export const topicMeta: Record<string, TopicMeta> = {
     description: 'Big Walk hit an all-time peak of 46,409 concurrent Steam players on August 5, 2026, with ~1 million copies sold in week one. Where to check the live Big Walk player count.',
     keywords: 'big walk player count, big walk concurrent players, how many people playing big walk, big walk peak players',
   },
+  'join-codes': {
+    title: 'Big Walk Join Codes on PS5: How to Get & Enter Codes',
+    description: 'How to use Big Walk join codes on PS5 — where to find your code, how to enter a friend\'s code, cross-play with PC and Switch 2, and fixes for "Connection to Host Timed Out."',
+    keywords: 'big walk join codes ps5, big walk join code, big walk session code, big walk code not working',
+  },
   price: {
     title: 'Big Walk Price: $19.99 on Steam, Free on PS Plus at Launch',
     description: 'Big Walk costs $19.99 on Steam (PC/Mac). It was free at launch for PS Plus members on PS5, and the Switch 2 eShop carries a paid listing. Full cost breakdown.',
